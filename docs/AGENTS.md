@@ -11,6 +11,7 @@ Only edit AGENTS when user says “make a note” (ignore CLAUDE.md).
 Keep files <~500 LOC; split/refactor as needed.
 Commits: Conventional Commits (feat|fix|refactor|build|ci|chore|docs|style|perf|test).
 Subagents: read docs/subagent.md.
+
 Editor: cursor <path>.
 Prefer end-to-end verify; if blocked, say what’s missing.
 New deps: quick health check (recent releases/commits, adoption).
@@ -34,7 +35,7 @@ Typography: pick a real font; avoid Inter/Roboto/Arial/system defaults.
 Theme: commit to a palette; use CSS vars; bold accents > timid gradients.
 Motion: 1–2 high-impact moments (staggered reveal beats random micro-anim).
 Background: add depth (gradients/patterns), not flat default.
-Avoid: purple-on-white clichés, generic component grids, predictable layouts. </frontend_aesthetics>
+Avoid: purple-on-white clichés, generic component grids, predictable layouts.
 
 
 # Payload CMS Development Rules
