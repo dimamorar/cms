@@ -141,9 +141,24 @@ NEXT_PUBLIC_SERVER_URL=https://cms.morar.dev
 CRON_SECRET=<generated-secret>
 PREVIEW_SECRET=<generated-secret>
 NODE_ENV=production
+
+# Portfolio site revalidation (required for on-demand revalidation)
+PORTFOLIO_REVALIDATE_URL=https://morar.dev/api/revalidate
+PORTFOLIO_REVALIDATE_SECRET=<shared-secret-token>
 ```
 
+**Note**: See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
 ### Deployment Workflow
+
+**Option 1: Using deployment script (recommended)**
+
+```bash
+# From local machine - runs deployment script on server
+npm run deploy
+```
+
+**Option 2: Manual deployment**
 
 ```bash
 # On Hetzner server
@@ -153,6 +168,18 @@ git pull
 npm install  # if package.json changed
 npm run build
 sudo systemctl restart payload-cms.service
+```
+
+**Option 3: One-liner command**
+
+```bash
+ssh hetzner "cd /var/www/payload/payload-cms && git pull && npm install && npm run build && sudo systemctl restart payload-cms.service"
+```
+
+**Note**: After deploying the revalidation feature, make sure to update `.env` on the server with:
+```bash
+PORTFOLIO_REVALIDATE_URL=https://morar.dev/api/revalidate
+PORTFOLIO_REVALIDATE_SECRET=your-secret-token-here
 ```
 
 ## Local Development
