@@ -227,6 +227,10 @@ export interface Post {
   id: string;
   title: string;
   heroImage?: (string | null) | Media;
+  /**
+   * Short summary used in listings and previews.
+   */
+  excerpt?: string | null;
   content: {
     root: {
       type: string;
@@ -1193,6 +1197,7 @@ export interface FormBlockSelect<T extends boolean = true> {
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
   heroImage?: T;
+  excerpt?: T;
   content?: T;
   relatedPosts?: T;
   categories?: T;

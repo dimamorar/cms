@@ -82,6 +82,15 @@ export const Posts: CollectionConfig<'posts'> = {
               relationTo: 'media',
             },
             {
+              name: 'excerpt',
+              type: 'textarea',
+              label: 'Excerpt',
+              admin: {
+                rows: 4,
+                description: 'Short summary used in listings and previews.',
+              },
+            },
+            {
               name: 'content',
               type: 'richText',
               editor: lexicalEditor({
