@@ -4,6 +4,15 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - PAYLOAD_SECRET=${PAYLOAD_SECRET}
+      - NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
+      - CRON_SECRET=${CRON_SECRET}
+      - PREVIEW_SECRET=${PREVIEW_SECRET}
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORTFOLIO_REVALIDATE_URL=${PORTFOLIO_REVALIDATE_URL}
+      - PORTFOLIO_REVALIDATE_SECRET=${PORTFOLIO_REVALIDATE_SECRET}
     networks:
       - dokploy-network
 
