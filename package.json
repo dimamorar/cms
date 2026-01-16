@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "build:compile": "cross-env NODE_OPTIONS=--no-deprecation next build --experimental-build-mode compile",
+    "build:generate-env": "cross-env NODE_OPTIONS=--no-deprecation next build --experimental-build-mode generate-env",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation PORT=3001 next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
