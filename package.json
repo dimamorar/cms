@@ -4,6 +4,7 @@
   "description": "Website template for Payload",
   "license": "MIT",
   "type": "module",
+  "packageManager": "pnpm@10.4.1",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
     "build:compile": "cross-env NODE_OPTIONS=--no-deprecation next build --experimental-build-mode compile",
