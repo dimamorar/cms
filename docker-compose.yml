@@ -13,9 +13,15 @@ services:
       - NODE_ENV=${NODE_ENV:-production}
       - PORTFOLIO_REVALIDATE_URL=${PORTFOLIO_REVALIDATE_URL}
       - PORTFOLIO_REVALIDATE_SECRET=${PORTFOLIO_REVALIDATE_SECRET}
+    volumes:
+      - media_data:/app/public/media
     networks:
       - dokploy-network
 
 networks:
   dokploy-network:
     external: true
+
+volumes:
+  media_data:
+    driver: local
