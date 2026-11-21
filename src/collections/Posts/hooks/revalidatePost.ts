@@ -72,7 +72,7 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = async ({
       payload.logger.info(`Revalidating post at path: ${path}`)
 
       revalidatePath(path)
-      revalidateTag('posts-sitemap')
+      revalidateTag('posts-sitemap', 'max')
 
       // Trigger portfolio site revalidation
       await revalidatePortfolioSite({
@@ -90,7 +90,7 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = async ({
       payload.logger.info(`Revalidating old post at path: ${oldPath}`)
 
       revalidatePath(oldPath)
-      revalidateTag('posts-sitemap')
+      revalidateTag('posts-sitemap', 'max')
 
       // Trigger portfolio site revalidation for old path
       await revalidatePortfolioSite({
@@ -112,7 +112,7 @@ export const revalidateDelete: CollectionAfterDeleteHook<Post> = async ({
     const path = `/posts/${doc?.slug}`
 
     revalidatePath(path)
-    revalidateTag('posts-sitemap')
+    revalidateTag('posts-sitemap', 'max')
 
     // Trigger portfolio site revalidation
     await revalidatePortfolioSite({
